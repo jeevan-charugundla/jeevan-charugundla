@@ -199,35 +199,10 @@ Interactive analytics dashboard with dynamic visualization systems.
 
 ---
 
-# 📊 GitHub Analytics
 
-<div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=jeevan-charugundla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=8B5CF6&text_color=FFFFFF"/>
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jeevan-charugundla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=FFFFFF"/>
 
-</div>
-
-<br/>
-
-<div align="center">
-
-<img width="75%" src="https://github-readme-streak-stats.herokuapp.com/?user=jeevan-charugundla&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=8B5CF6&currStreakLabel=8B5CF6"/>
-
-</div>
-
----
-
-# 📈 Contribution Activity
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=jeevan-charugundla&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=8B5CF6&line=8B5CF6&point=FFFFFF"/>
-
-</div>
-
----
 
 # 🌱 Currently Exploring
 
