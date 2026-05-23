@@ -1,46 +1,4 @@
-# 🧑‍💻 About Me
-
 <div align="center">
-
-<img align="right" alt="Coding" width="380" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif">
-
-</div>
-
-```yaml
-name: Jeevan Charugundla
-role: AI-Powered Product Developer
-
-specialization:
-  - Flutter Development
-  - Full-Stack Engineering
-  - AI + EdTech Systems
-  - Premium UI/UX Architecture
-
-currently_building: SikhoEasy
-mission: Building impactful digital experiences
-focus: Scalable and modern products
-mindset: Learn • Build • Innovate • Scale
-```
-
----
-
-# ⚡ Developer Mindset
-
-```javascript
-const jeevan = {
-  code: ["Dart", "JavaScript", "TypeScript", "Python"],
-
-  technologies: {
-      mobile: ["Flutter"],
-      frontend: ["React", "Next.js", "Tailwind"],
-      backend: ["Node.js", "Express"],
-      database: ["MongoDB", "Firebase"]
-  },
-
-  currentFocus: "AI + EdTech Systems",
-  funFact: "Turning ideas into scalable products 🚀"
-};
-```<div align="center">
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=38&duration=2500&pause=1000&color=8B5CF6&center=true&vCenter=true&width=1000&lines=Hey+there!+👋;I'm+Jeevan+Charugundla;AI-Powered+Product+Developer;Flutter+Engineer+•+Full-Stack+Builder;Building+Impactful+Digital+Experiences" />
 
@@ -66,35 +24,53 @@ const jeevan = {
 
 ---
 
-
-
 # 🧑‍💻 About Me
+
+<img align="right" alt="Coding" width="380" src="https://user-images.githubusercontent.com/74038190/212897597-fd9e7e0d-3c54-4b1f-b6f0-4dba0bdb0e49.gif">
 
 <div align="center">
 
-<img align="right" alt="Coding" width="380" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif">
+## ⚡ Developer Profile
 
+<table>
+<tr>
+<td align="center" width="33%">
 
+### 🤖 AI
+Building intelligent systems  
+and AI-powered experiences
+
+</td>
+
+<td align="center" width="33%">
+
+### 📱 Flutter
+Creating scalable mobile  
+applications with premium UI
+
+</td>
+
+<td align="center" width="33%">
+
+### 🌐 Full Stack
+Developing complete modern  
+digital ecosystems
+
+</td>
+</tr>
+</table>
 
 </div>
 
-```yaml
+<br/>
 
-```yaml
-name: Jeevan Charugundla
-role: AI-Powered Product Developer
+<div align="center">
 
-specialization:
-  - Flutter Development
-  - Full-Stack Engineering
-  - AI + EdTech Systems
-  - Premium UI/UX Architecture
+### 🚀 Currently Building
 
-currently_building: SikhoEasy
-mission: Building impactful digital experiences
-focus: Scalable and modern products
-mindset: Learn • Build • Innovate • Scale
-```
+🎓 **SikhoEasy** — AI-powered adaptive EdTech platform focused on smarter and engaging learning experiences.
+
+</div>
 
 ---
 
@@ -132,7 +108,7 @@ const jeevan = {
 
 <div align="center">
 
-| Project | Description | Tech |
+| Project | Description | Stack |
 |---------|-------------|-------|
 | 🎓 SikhoEasy | AI-powered EdTech ecosystem with smart learning experiences | Flutter • Firebase • AI |
 | 🍱 Smart Food Redistribution | Intelligent food wastage reduction platform | Flutter • ML • Dashboard |
