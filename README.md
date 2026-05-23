@@ -80,6 +80,7 @@ I enjoy transforming ideas into production-ready applications with strong archit
 # 🛠️ Tech Stack
 
 ## 💻 Languages
+
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -88,11 +89,13 @@ I enjoy transforming ideas into production-ready applications with strong archit
 ---
 
 ## 📱 Mobile Development
+
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
 ---
 
 ## 🌐 Frontend
+
 ![React](https://img.shields.io/badge/React-black?style=for-the-badge&logo=react)
 ![Next JS](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -100,6 +103,7 @@ I enjoy transforming ideas into production-ready applications with strong archit
 ---
 
 ## ⚙️ Backend & Database
+
 ![Firebase](https://img.shields.io/badge/Firebase-black?style=for-the-badge&logo=firebase)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-black?style=for-the-badge&logo=mongodb)
@@ -108,13 +112,11 @@ I enjoy transforming ideas into production-ready applications with strong archit
 
 # 📈 GitHub Stats
 
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=jeevan-charugundla&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jeevan-charugundla&layout=compact&theme=tokyonight&hide_border=true"/>
-
-</div>
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=jeevan-charugundla&show_icons=true&theme=tokyonight&hide_border=true" />
+  
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jeevan-charugundla&layout=compact&theme=tokyonight&hide_border=true" />
+</p>
 
 ---
 
@@ -161,14 +163,27 @@ I enjoy transforming ideas into production-ready applications with strong archit
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
+<a href="https://jeevan-portfolio-delta.vercel.app/">
+<img src="https://img.shields.io/badge/Portfolio-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white"/>
+</a>
+
 </div>
 
 ---
 
+# 🌐 Portfolio
+
 <div align="center">
 
-### ⚡ "Building products that create real impact."
+### 🚀 Explore My Portfolio Website
 
-<img src="https://komarev.com/ghpvc/?username=jeevan-charugundla&style=for-the-badge&color=8B5CF6"/>
+<a href="https://jeevan-portfolio-delta.vercel.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Visit%20Portfolio-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white"/>
+</a>
+
+<br/>
+<br/>
+
+Building modern AI-powered digital experiences with scalable architecture and premium UI/UX.
 
 </div>
