@@ -1,10 +1,27 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=38&duration=2500&pause=1000&color=8B5CF6&center=true&vCenter=true&width=1000&lines=Hey+there!+👋;I'm+Jeevan+Charugundla;AI-Powered+Product+Developer;Flutter+Engineer+•+Full-Stack+Builder;Building+Impactful+Digital+Experiences" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=42&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&multiline=true&repeat=true&width=1000&height=120&lines=Hey+there!+👋;I'm+Jeevan+Charugundla;AI-Powered+Product+Developer;Flutter+Engineer+•+Full-Stack+Builder" />
 
 <br/>
 
-# 🚀 AI-Powered Product Developer | Flutter Engineer | Full-Stack Builder
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:8B5CF6,100:3B82F6&height=3&section=header"/>
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+# 👨‍💻 Jeevan Charugundla
+
+### 🚀 AI-Powered Product Developer  
+### 📱 Flutter Engineer  
+### 🌐 Full-Stack Builder  
+
+<br/>
+
+> Building impactful digital experiences  
+> that create real impact.
 
 <br/>
 
@@ -20,85 +37,117 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
+<a href="mailto:your-email@example.com">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+</td>
+
+<td width="50%">
+
+<img src="https://user-images.githubusercontent.com/74038190/212897597-fd9e7e0d-3c54-4b1f-b6f0-4dba0bdb0e49.gif" width="100%"/>
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🚀 Developer Dashboard
+
+<div align="center">
+
+| 🚀 Projects | 💻 Experience | 👥 Users | 🏆 Hackathons | 🧠 Mindset |
+|---|---|---|---|---|
+| 10+ Completed | 2+ Years | 100+ Impacted | 5+ Participated | Always Learning |
+
 </div>
 
 ---
 
 # 🧑‍💻 About Me
 
-<img align="right" alt="Coding" width="380" src="https://user-images.githubusercontent.com/74038190/212897597-fd9e7e0d-3c54-4b1f-b6f0-4dba0bdb0e49.gif">
-
-<div align="center">
-
-## ⚡ Developer Profile
-
 <table>
 <tr>
-<td align="center" width="33%">
+<td width="50%">
 
-### 🤖 AI
-Building intelligent systems  
-and AI-powered experiences
+### 🌌 Passionate Builder
+
+- 🤖 AI-powered applications
+- 📱 Scalable Flutter systems
+- 🌐 Full-stack engineering
+- 🎨 Premium UI/UX experiences
+- 🚀 Real-world impactful products
+
+Currently building:
+
+## 🎓 SikhoEasy
+
+AI-powered adaptive EdTech platform focused on smarter learning experiences.
 
 </td>
 
-<td align="center" width="33%">
+<td width="50%">
 
-### 📱 Flutter
-Creating scalable mobile  
-applications with premium UI
+```javascript
+const jeevan = {
 
-</td>
+  role: "AI-Powered Product Developer",
 
-<td align="center" width="33%">
+  focus: [
+    "AI",
+    "Flutter",
+    "EdTech",
+    "Full Stack"
+  ],
 
-### 🌐 Full Stack
-Developing complete modern  
-digital ecosystems
+  passion: "Building impactful products",
+
+  currentlyBuilding: "SikhoEasy",
+
+  mindset: "Learn • Build • Innovate • Scale",
+
+  funFact:
+   "Turning ideas into scalable systems 🚀"
+};
+```
 
 </td>
 </tr>
 </table>
 
-</div>
+---
+
+# ⚡ Tech Stack
+
+<div align="center">
+
+## 💻 Languages
+<img src="https://skillicons.dev/icons?i=dart,js,ts,python,java,c&theme=dark" />
 
 <br/>
+<br/>
 
-<div align="center">
+## 📱 Mobile
+<img src="https://skillicons.dev/icons?i=flutter,firebase&theme=dark" />
 
-### 🚀 Currently Building
+<br/>
+<br/>
 
-🎓 **SikhoEasy** — AI-powered adaptive EdTech platform focused on smarter and engaging learning experiences.
+## 🌐 Frontend
+<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,html,css&theme=dark" />
 
-</div>
+<br/>
+<br/>
 
----
+## ⚙️ Backend
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql&theme=dark" />
 
-# ⚡ Developer Mindset
+<br/>
+<br/>
 
-```javascript
-const jeevan = {
-  code: ["Dart", "JavaScript", "TypeScript", "Python"],
-
-  technologies: {
-      mobile: ["Flutter"],
-      frontend: ["React", "Next.js", "Tailwind"],
-      backend: ["Node.js", "Express"],
-      database: ["MongoDB", "Firebase"]
-  },
-
-  currentFocus: "AI + EdTech Systems",
-  funFact: "Turning ideas into scalable products 🚀"
-};
-```
-
----
-
-# 🛠️ Tech Stack
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=dart,flutter,firebase,react,nextjs,nodejs,mongodb,python,ts,js,tailwind,git,github,vscode,figma&theme=dark" />
+## 🧰 Tools
+<img src="https://skillicons.dev/icons?i=git,github,vscode,figma,postman&theme=dark" />
 
 </div>
 
@@ -106,16 +155,55 @@ const jeevan = {
 
 # 🚀 Featured Projects
 
-<div align="center">
+<table>
+<tr>
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| 🎓 SikhoEasy | AI-powered EdTech ecosystem with smart learning experiences | Flutter • Firebase • AI |
-| 🍱 Smart Food Redistribution | Intelligent food wastage reduction platform | Flutter • ML • Dashboard |
-| 🏨 Hostel Allocation System | Smart room allocation and management system | React • Node.js • MongoDB |
-| 📊 GDP Analytics Dashboard | Interactive analytics & visualization platform | Next.js • Charts • APIs |
+<td width="25%">
 
-</div>
+## 🎓 SikhoEasy
+
+AI-powered EdTech ecosystem with adaptive learning, AI tutor, gamification, and personalized experiences.
+
+### ⚡ Stack
+`Flutter` `Firebase` `AI`
+
+</td>
+
+<td width="25%">
+
+## 🍱 Smart Food Redistribution
+
+Intelligent platform reducing food wastage through smart redistribution systems.
+
+### ⚡ Stack
+`Flutter` `ML` `Dashboard`
+
+</td>
+
+<td width="25%">
+
+## 🏨 Hostel Allocation
+
+Smart room allocation and hostel management platform with automation.
+
+### ⚡ Stack
+`React` `Node.js` `MongoDB`
+
+</td>
+
+<td width="25%">
+
+## 📊 GDP Dashboard
+
+Interactive analytics dashboard with dynamic visualization systems.
+
+### ⚡ Stack
+`Next.js` `Charts` `API`
+
+</td>
+
+</tr>
+</table>
 
 ---
 
@@ -123,19 +211,17 @@ const jeevan = {
 
 <div align="center">
 
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=jeevan-charugundla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=8B5CF6&text_color=ffffff"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=jeevan-charugundla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=8B5CF6&text_color=FFFFFF"/>
 
-<img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jeevan-charugundla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=ffffff"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jeevan-charugundla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=FFFFFF"/>
 
 </div>
 
----
-
-# 🔥 GitHub Streak
+<br/>
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=jeevan-charugundla&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=8B5CF6&currStreakLabel=8B5CF6"/>
+<img width="75%" src="https://github-readme-streak-stats.herokuapp.com/?user=jeevan-charugundla&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=8B5CF6&currStreakLabel=8B5CF6"/>
 
 </div>
 
@@ -156,26 +242,26 @@ const jeevan = {
 <div align="center">
 
 | 🚀 Domain | 💡 Focus |
-|-----------|----------|
-| AI Systems | AI-integrated learning experiences |
-| Flutter | Advanced scalable architecture |
-| Backend | Real-time scalable systems |
-| Product Engineering | Smart recommendation engines |
-| UI/UX | Premium EdTech experiences |
+|---|---|
+| 🤖 AI Systems | AI-integrated learning systems |
+| 📱 Flutter | Advanced scalable architecture |
+| ⚡ Backend | Real-time scalable systems |
+| 🧠 Product Engineering | Smart recommendation engines |
+| 🎨 UI/UX | Premium EdTech experiences |
 
 </div>
 
 ---
 
-# 🏆 Achievements
+# 🏆 Achievements & Goals
 
 <div align="center">
 
-🏅 Building AI-powered EdTech products  
-🚀 Developing scalable Flutter ecosystems  
-🌍 Creating impactful digital solutions  
-💡 Focused on real-world innovation  
-⚡ Passionate about premium UI/UX systems  
+⭐ Building AI-powered EdTech products  
+⭐ Scaling SikhoEasy globally  
+⭐ Creating impactful digital experiences  
+⭐ Contributing to open-source ecosystems  
+⭐ Constantly learning and innovating  
 
 </div>
 
@@ -185,7 +271,7 @@ const jeevan = {
 
 <div align="center">
 
-<a href="https://jeevan-portfolio-delta.vercel.app/" target="_blank">
+<a href="https://jeevan-portfolio-delta.vercel.app/">
 
 <img src="https://img.shields.io/badge/🚀_Visit_My_Portfolio-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0D1117"/>
 
@@ -200,7 +286,17 @@ const jeevan = {
 
 ---
 
-# 🤝 Connect With Me
+# 💬 Daily Dev Quote
+
+<div align="center">
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight"/>
+
+</div>
+
+---
+
+# 🤝 Let's Connect
 
 <div align="center">
 
@@ -222,12 +318,8 @@ const jeevan = {
 
 <div align="center">
 
-# ⚡ “Building products that create real impact.”
+## 💜 Let's build something amazing together!
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
-
-<br/>
-
-### 💜 Thanks for visiting my profile!
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,100:3B82F6&height=120&section=footer"/>
 
 </div>
