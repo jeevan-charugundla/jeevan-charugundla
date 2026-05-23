@@ -8,9 +8,9 @@
 
 </div>
 
-<table>
-<tr>
-<td width="50%">
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212897597-fd9e7e0d-3c54-4b1f-b6f0-4dba0bdb0e49.gif" width="70%"/>
 
 # 👨‍💻 Jeevan Charugundla
 
@@ -41,15 +41,7 @@
   <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
 
-</td>
-
-<td width="50%">
-
-<img src="https://user-images.githubusercontent.com/74038190/212897597-fd9e7e0d-3c54-4b1f-b6f0-4dba0bdb0e49.gif" width="100%"/>
-
-</td>
-</tr>
-</table>
+</div>>
 
 ---
 
