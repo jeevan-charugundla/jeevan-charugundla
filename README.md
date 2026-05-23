@@ -1,8 +1,4 @@
-<div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=42&pause=1000&color=8B5CF6&center=true&vCenter=true&width=1000&height=80&lines=Hey+there!+👋+I'm+Jeevan+Charugundla;AI-Powered+Product+Developer;Flutter+Engineer+%7C+Full-Stack+Builder;Building+Impactful+Digital+Experiences" />
-
-<br/>
 
 ### 🚀 AI-Powered Product Developer | Flutter Engineer | Full-Stack Builder
 
