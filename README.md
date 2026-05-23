@@ -35,40 +35,6 @@
 </div>
 
 ```yaml
-name: Jeevan Charugundla
-role: AI-Powered Product Developer
-
-specialization:
-  - Flutter Development
-  - Full-Stack Engineering
-  - AI + EdTech Systems
-  - Premium UI/UX Architecture
-
-currently_building: SikhoEasy
-mission: Building impactful digital experiences
-focus: Scalable and modern products
-mindset: Learn • Build • Innovate • Scale
-```
-
----
-
-# ⚡ Developer Mindset
-
-```javascript
-const jeevan = {
-  code: ["Dart", "JavaScript", "TypeScript", "Python"],
-
-  technologies: {
-      mobile: ["Flutter"],
-      frontend: ["React", "Next.js", "Tailwind"],
-      backend: ["Node.js", "Express"],
-      database: ["MongoDB", "Firebase"]
-  },
-
-  currentFocus: "AI + EdTech Systems",
-  funFact: "Turning ideas into scalable products 🚀"
-};
-```
 
 ```yaml
 name: Jeevan Charugundla
