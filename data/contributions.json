@@ -1485,43 +1485,43 @@
     },
     {
       "date": "2026-11-14",
-      "contributionCount": 2
+      "contributionCount": 16
     }
   ],
   "featured_repos": [
     {
-      "name": "SekhoEasy",
-      "description": "AI-powered learning app with concept reels, interactive MCQs, an AI tutor and gamified learning.",
-      "html_url": "https://github.com/jeevan-charugundla/SekhoEasy",
-      "language": "Flutter",
-      "stargazers_count": 0
-    },
-    {
       "name": "Learnwise-Ai",
-      "description": "AI learning platform with question generation, answer evaluation, progress analytics and a study assistant.",
-      "html_url": "https://github.com/jeevan-charugundla/Learnwise-Ai",
+      "description": "AI-powered learning platform: Groq LLM question generation, AI answer evaluation, progress analytics, and a conversational study assistant. FastAPI + React + Supabase + Docker.",
       "language": "TypeScript",
+      "html_url": "https://github.com/jeevan-charugundla/Learnwise-Ai",
       "stargazers_count": 0
     },
     {
       "name": "WindowsAi",
-      "description": "Windows desktop AI companion with screen understanding, visual guidance and voice input.",
-      "html_url": "https://github.com/jeevan-charugundla/WindowsAi",
+      "description": "Windows AI Companion \u2014 a WPF desktop AI assistant that can see your screen and teach you where to click: chat, screen analysis, visual Guide Me target detection with a teaching overlay, and Whisper voice input. WPF/.NET 8 + Node/TypeScript + Groq.",
       "language": "C#",
+      "html_url": "https://github.com/jeevan-charugundla/WindowsAi",
       "stargazers_count": 0
     },
     {
       "name": "zero-waste-grocery",
-      "description": "Agentic AI for grocery inventory intelligence, demand insights and food-waste reduction.",
-      "html_url": "https://github.com/jeevan-charugundla/zero-waste-grocery",
+      "description": "A project built to solve a real problem.",
       "language": "Python",
+      "html_url": "https://github.com/jeevan-charugundla/zero-waste-grocery",
       "stargazers_count": 0
     },
     {
       "name": "gdp-dashboard",
-      "description": "Interactive GDP data dashboard with country-level comparisons and visual analytics.",
-      "html_url": "https://github.com/jeevan-charugundla/gdp-dashboard",
+      "description": "A project built to solve a real problem.",
       "language": "Python",
+      "html_url": "https://github.com/jeevan-charugundla/gdp-dashboard",
+      "stargazers_count": 0
+    },
+    {
+      "name": "jeevan-charugundla",
+      "description": "A project built to solve a real problem.",
+      "language": "Python",
+      "html_url": "https://github.com/jeevan-charugundla/jeevan-charugundla",
       "stargazers_count": 0
     }
   ]
