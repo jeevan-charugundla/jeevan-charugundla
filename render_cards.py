@@ -180,11 +180,60 @@ def section_title_stack(fonts):
  body=f'<text x="2" y="46" font-family="{SERIF}" font-size="34" fill="{PAPER}">My <tspan font-style="italic">tech stack</tspan></text>'
  save("title-stack-v2.svg",body,fonts,W,64,"My tech stack")
 
+
+def section_title_achievements(fonts):
+ body=f'<text x="2" y="46" font-family="{SERIF}" font-size="34" fill="{PAPER}">Achievements &amp; <tspan font-style="italic">milestones</tspan></text>'
+ save("title-achievements.svg",body,fonts,W,64,"Achievements and milestones")
+
+
+def achievement_cards(fonts):
+ # Three editorial cards: awards are separated from project showcases so no rank is implied.
+ cards=[
+  {"title":"Tech for Good 2026","award":"1ST PRIZE","project":"Elevate OS","desc":["A student-focused platform for learning,","productivity, opportunities and growth."],"tags":["Student platform","Product design"],"accent":BLUE},
+  {"title":"InnoQuest 2025","award":"3RD PLACE","project":"Sustainable Transportation","desc":["A sustainable commuting app designed","to encourage eco-friendly travel."],"tags":["Microsoft Azure","Sustainability"],"accent":RED},
+  {"title":"Project showcases","award":"BUILT & PRESENTED","project":"Freshwise · Kisaan AI · AlgoHack","desc":["Agentic AI for grocery waste, smart","agriculture and Algorand prediction markets."],"tags":["Agentic AI","AgriTech","Web3"],"accent":YELLOW},
+ ]
+ card_w=280; gap=20; h=250; y=8
+ parts=[]
+ for i,c in enumerate(cards):
+  x=i*(card_w+gap)
+  a=c["accent"]
+  parts.append(f'<g class="r" style="animation-delay:{.15+i*.12:.2f}s"><rect x="{x}" y="{y}" width="{card_w}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/><path d="M{x} {y+h-44} L{x} {y+h-14} Q{x} {y+h} {x+14} {y+h} L{x+44} {y+h} Z" fill="{a}"/></g>')
+  # Simple geometric medal motif, avoiding emoji/font fallback.
+  cx=x+38; cy=y+52
+  parts.append(f'<circle cx="{cx}" cy="{cy}" r="22" fill="{a}" opacity=".16"/><circle cx="{cx}" cy="{cy}" r="14" fill="{a}"/><path d="M{cx-6} {cy} l4 4 8 -9" fill="none" stroke="{PAPER}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>')
+  parts.append(T(x+74,y+35,c["title"],16,600,INK,SANS))
+  pill_w=min(126,max(88,len(c["award"])*7+24))
+  parts.append(f'<rect x="{x+74}" y="{y+48}" width="{pill_w}" height="23" rx="11.5" fill="{a}"/>')
+  parts.append(T(x+86,y+64,c["award"],10,600,INK if a==YELLOW else PAPER,MONO))
+  parts.append(T(x+22,y+112,c["project"],15,600,INK,SANS))
+  for k,line in enumerate(c["desc"]):
+   parts.append(T(x+22,y+139+k*21,line,11,400,SOFT,SANS))
+  tx=x+22
+  for tag in c["tags"]:
+   tw=len(tag)*6.2+18
+   parts.append(f'<rect x="{tx}" y="{y+194}" width="{tw}" height="22" rx="11" fill="none" stroke="{RULE}" stroke-width="1.2"/>')
+   parts.append(T(tx+9,y+209,tag,9,600,SOFT,SANS))
+   tx+=tw+7
+ save("06-achievements.svg","".join(parts),fonts,W,h+16,"Achievements: Tech for Good 2026 first prize for Elevate OS; InnoQuest 2025 third place for a sustainable transportation app; project showcases Freshwise, Kisaan AI and AlgoHack")
+
+
+def achievement_milestones(fonts):
+ items=[("01","FIRST-PLACE WIN",BLUE),("01","PODIUM FINISH",RED),("03","PROJECT SHOWCASES",YELLOW)]
+ w=W/3; h=78; parts=[f'<rect x="0" y="0" width="{W}" height="{h}" rx="13" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
+ for i,(num,label,accent) in enumerate(items):
+  x=i*w
+  if i: parts.append(f'<line x1="{x}" y1="16" x2="{x}" y2="{h-16}" stroke="{RULE}" stroke-width="1"/>')
+  parts.append(f'<rect x="{x+20}" y="22" width="34" height="34" rx="10" fill="{accent}"/>')
+  parts.append(T(x+31,45,num,13,600,INK if accent==YELLOW else PAPER,MONO))
+  parts.append(T(x+68,44,label,12,600,INK,SANS))
+ save("07-milestones.svg","".join(parts),fonts,W,h,"Milestones: one first-place win, one podium finish and three project showcases")
+
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
- hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts); section_title_stack(fonts); tech_stack(fonts)
+ hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts); section_title_stack(fonts); tech_stack(fonts); section_title_achievements(fonts); achievement_cards(fonts); achievement_milestones(fonts)
  tile("02-tile-1-v2.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
  tile("02-tile-2-v2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
  tile("02-tile-3-v2.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
