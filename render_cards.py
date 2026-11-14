@@ -152,11 +152,33 @@ def section_title(fonts):
  body=f"<text class=\"r\" {D(4.4)} x=\"2\" y=\"46\" font-family=\"{SERIF}\" font-size=\"34\" fill=\"{PAPER}\">What I'm <tspan font-style=\"italic\">coding</tspan></text>"
  save("title-coding.svg",body,fonts,W,64,"What I'm coding")
 
+
+def tech_stack(fonts):
+ # One compact editorial card, using the same palette and typography as the profile tiles.
+ groups=[
+  ("FRONTEND",["React","TypeScript","Flutter"]),
+  ("BACKEND",["Python","FastAPI","Node.js"]),
+  ("AI / ML",["Gemini","Groq","TensorFlow Lite"]),
+  ("DATABASE",["Supabase","PostgreSQL","MySQL"]),
+  ("TOOLS",["Git","Docker","VS Code"]),
+ ]
+ w=W/5; h=172; parts=[f'<rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
+ for i,(heading,items) in enumerate(groups):
+  x=i*w
+  accent=[BLUE,RED,YELLOW,BLUE,RED][i]
+  if i:
+   parts.append(f'<line x1="{x}" y1="24" x2="{x}" y2="{h-24}" stroke="{RULE}" stroke-width="1"/>')
+  parts.append(f'<g class="r" style="animation-delay:{.15+i*.12:.2f}s"><rect x="{x+22}" y="27" width="8" height="8" rx="2" fill="{accent}"/>{T(x+40,36,heading,11,600,MUTED,MONO,\'letter-spacing="0.7"\')}</g>')
+  for j,item in enumerate(items):
+   yy=76+j*29
+   parts.append(f'<g class="r" style="animation-delay:{.35+i*.12+j*.07:.2f}s"><circle cx="{x+28}" cy="{yy-5}" r="3.5" fill="{accent}"/>{T(x+42,yy,item,14,600,INK,SANS)}</g>')
+ save("05-tech-stack.svg","".join(parts),fonts,W,h,"Tech stack: React, TypeScript, Flutter, Python, FastAPI, Node.js, Gemini, Groq, TensorFlow Lite, Supabase, PostgreSQL, MySQL, Git, Docker and VS Code")
+
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
- hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts)
+ hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts); tech_stack(fonts)
  tile("02-tile-1-v2.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
  tile("02-tile-2-v2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
  tile("02-tile-3-v2.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
