@@ -81,7 +81,7 @@ def hero(fonts):
  body=f'<defs>{grad}</defs><rect width="{W}" height="420" rx="14" fill="{PAPER}"/><g class="f" {D(0)}><rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{BLUE}"/>{T(66,57,"AI PRODUCT ENGINEER / FULL-STACK BUILDER",12,400,MUTED,MONO,'letter-spacing="1"')}</g><text class="r" {D(.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Jeevan</text><text class="r" {D(.30)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="108" letter-spacing="-2.5" fill="url(#shine)">Charugundla</text><g class="r" {D(.55)}>{textlines(48,338,["I build AI-powered products, engineer useful experiences,","and turn ideas into reality."],27,f'font-family="{SANS}" font-size="18" fill="{SOFT}"')}</g><g class="f" {D(.85)}>{T(48,396,"jeevan-portfolio-delta.vercel.app",13,400,INK,MONO)}<text x="246" y="396" class="n" font-family="{MONO}" font-size="13" fill="{BLUE}">↗</text></g><g transform="translate(520 55) scale(.41) translate(-20 -37)" font-family="ui-monospace,Menlo,Consolas,monospace">{''.join(portrait)}</g>'
  save("01-hero.svg",body,fonts,W,420,"Jeevan Charugundla — AI Product Engineer")
 def counter(num,unit,x,y,attrs,start):
- m=re.match(r"([\\d.]+)(.*)",str(num)); n=float(m.group(1)); suffix=m.group(2); decimals=len(m.group(1).split(".")[1]) if "." in m.group(1) else 0
+ m=re.match(r"([\d.]+)(.*)",str(num)); n=float(m.group(1)); suffix=m.group(2); decimals=len(m.group(1).split(".")[1]) if "." in m.group(1) else 0
  tail=f' <tspan font-style="italic">{E(unit)}</tspan>'
  if STATIC:return f'<text x="{x}" y="{y}" {attrs}>{E(num)}{tail}</text>'
  parts=[]
