@@ -2,19 +2,6 @@
 
 <img src="cards/01-hero-v2.svg" width="100%" alt="Jeevan Charugundla — AI Product Engineer"/>
 
-<details>
-<summary>✨ Reveal the emoji version</summary>
-<p align="center">
-
-<code>🤓</code>　<code>🧑🏽‍💻</code>　<code>⚡</code>　<code>🚀</code>
-
-**Surprise! You found my developer mode.**
-
-AI builder · UI tinkerer · lifelong learner
-
-</p>
-</details>
-
 <img src="cards/04-heatmap.svg" width="100%" alt="Blue GitHub contribution graph"/>
 
 <img src="cards/03-activity.svg" width="100%" alt="Monthly contribution chart, streak, active days and busiest day"/>
