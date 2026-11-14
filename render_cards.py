@@ -168,7 +168,8 @@ def tech_stack(fonts):
   accent=[BLUE,RED,YELLOW,BLUE,RED][i]
   if i:
    parts.append(f'<line x1="{x}" y1="24" x2="{x}" y2="{h-24}" stroke="{RULE}" stroke-width="1"/>')
-  parts.append(f'<g class="r" style="animation-delay:{.15+i*.12:.2f}s"><rect x="{x+22}" y="27" width="8" height="8" rx="2" fill="{accent}"/>{T(x+40,36,heading,11,600,MUTED,MONO,\'letter-spacing="0.7"\')}</g>')
+  heading_svg=T(x+40,36,heading,11,600,MUTED,MONO,'letter-spacing="0.7"')
+  parts.append(f'<g class="r" style="animation-delay:{.15+i*.12:.2f}s"><rect x="{x+22}" y="27" width="8" height="8" rx="2" fill="{accent}"/>{heading_svg}</g>')
   for j,item in enumerate(items):
    yy=76+j*29
    parts.append(f'<g class="r" style="animation-delay:{.35+i*.12+j*.07:.2f}s"><circle cx="{x+28}" cy="{yy-5}" r="3.5" fill="{accent}"/>{T(x+42,yy,item,14,600,INK,SANS)}</g>')
