@@ -21,7 +21,8 @@ jobs:
       - name: Install renderer dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pillow fonttools brotli
+          python -m pip install pillow fonttools brotli playwright
+          python -m playwright install --with-deps chromium
       - name: Fetch contribution calendar and repositories
         env:
           GH_TOKEN: ${{ github.token }}
@@ -76,6 +77,8 @@ jobs:
           PY
       - name: Render SVG cards
         run: python render_cards.py
+      - name: Render animated GIF cards for GitHub
+        run: python render_gifs.py
       - name: Commit refreshed cards
         run: |
           set -e
