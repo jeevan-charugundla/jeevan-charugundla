@@ -144,6 +144,10 @@ def repo_card(i,r,fonts):
  desc_svg=textlines(24,76,wrap(desc,34)[:4],20,f'font-family="{SANS}" font-size="13.5" fill="{SOFT}"')
  body=f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/><g class="r" {D(4.6+i*.12)}><rect x="24" y="28" width="8" height="8" rx="2" fill="{color}"/>{T(42,38,name,17,600,INK,SANS)}{desc_svg}{T(24,h-22,meta,10,400,MUTED,MONO)}</g>'
  save(f"project-{i+1:02d}.svg",body,fonts,w+8,h,f"{name}: {desc}")
+def section_title(fonts):
+ body=f"<text class=\"r\" {D(4.4)} x=\"2\" y=\"46\" font-family=\"{SERIF}\" font-size=\"34\" fill=\"{INK}\">What I'm <tspan font-style=\"italic\">coding</tspan></text>"
+ save("title-coding.svg",body,fonts,W,64,"What I'm coding")
+
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
