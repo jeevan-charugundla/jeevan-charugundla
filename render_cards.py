@@ -177,7 +177,7 @@ def tech_stack(fonts):
 
 
 def section_title_stack(fonts):
- body=f'<text class="r" {D(4.5)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{INK}">My <tspan font-style="italic">tech stack</tspan></text>'
+ body=f'<text class="r" {D(4.5)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{PAPER}">My <tspan font-style="italic">tech stack</tspan></text>'
  save("title-stack.svg",body,fonts,W,64,"My tech stack")
 
 def main():
