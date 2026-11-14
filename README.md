@@ -7,9 +7,9 @@
 <img src="cards/03-activity.svg" width="100%" alt="Monthly contribution chart, streak, active days and busiest day"/>
 
 <p>
-<a href="https://github.com/jeevan-charugundla"><img src="cards/02-tile-1.svg" width="32.5%" alt="BUILD — AI and engineering"/></a>
-<a href="https://jeevan-portfolio-delta.vercel.app/"><img src="cards/02-tile-2.svg" width="32.5%" alt="CREATE — design and experience"/></a>
-<a href="https://www.linkedin.com/in/jeevan-charugundla/"><img src="cards/02-tile-3.svg" width="32.5%" alt="LEARN — explore and experiment"/></a>
+<a href="https://github.com/jeevan-charugundla"><img src="cards/02-tile-1-v2.svg" width="32.5%" alt="BUILD — AI and engineering"/></a>
+<a href="https://jeevan-portfolio-delta.vercel.app/"><img src="cards/02-tile-2-v2.svg" width="32.5%" alt="CREATE — design and experience"/></a>
+<a href="https://www.linkedin.com/in/jeevan-charugundla/"><img src="cards/02-tile-3-v2.svg" width="32.5%" alt="LEARN — explore and experiment"/></a>
 </p>
 
 **BUILD WITH INTENT. CREATE WITH CURIOSITY.**
