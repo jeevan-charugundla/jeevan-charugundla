@@ -20,7 +20,7 @@
 
 <div align="center">
 
-## WHAT I'M CODING
+<img src="cards/title-coding.svg" width="100%" alt="What I'm coding"/>
 
 <a href="https://github.com/jeevan-charugundla/SekhoEasy"><img src="cards/project-01.svg" width="32.5%" alt="SekhoEasy"/></a>
 <a href="https://github.com/jeevan-charugundla/Learnwise-Ai"><img src="cards/project-02.svg" width="32.5%" alt="LearnWise AI"/></a>
