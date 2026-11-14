@@ -94,9 +94,9 @@ def counter(num,unit,x,y,attrs,start):
   hide=f'<set attributeName="opacity" to="0" begin="{start+1.1*(i+1)/18:.3f}s"/>' if i<18 else ""
   parts.append(f'<text x="{x}" y="{y}" {attrs} opacity="0">{E(label)}{tail}<set attributeName="opacity" to="1" begin="{begin:.3f}s"/>{hide}</text>')
  return "".join(parts)
-def tile(filename,title,color,fg,ordinal,copy,start,fonts):
+def tile(filename,title,color,fg,ordinal,unit,copy,start,fonts):
  w=W/3-8; desc="".join(f'<text class="r" {D(start+.75+i*.1)} x="24" y="{154+i*20}" font-family="{SANS}" font-size="13.5" fill="{fg}">{E(v)}</text>' for i,v in enumerate(wrap(copy,33)[:3]))
- body=f'<defs><clipPath id="card"><rect width="{w}" height="222" rx="14"/></clipPath><clipPath id="slot"><rect x="0" y="62" width="{w}" height="65"/></clipPath><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".38"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><g class="ti" {D(start)}><g clip-path="url(#card)"><rect width="{w}" height="222" fill="{color}"/><circle class="rg" {D(start+.5)} cx="{w-38}" cy="184" r="58" fill="none" stroke="{fg}" stroke-opacity=".5" stroke-width="2"/><rect class="sh" style="animation-delay:{start+1.4:.2f}s" x="0" y="-20" width="90" height="262" fill="url(#gl)"/></g><text class="sl" {D(start+.35)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{fg}">{E(title)}</text><g class="ai" {D(start+.5)}><text class="n" x="{w-38}" y="38" font-family="{MONO}" font-size="14" fill="{fg}">↗</text></g><g clip-path="url(#slot)"><g class="ro" {D(start+.45)}>{counter(ordinal,"world",22,116,f'font-family="{SERIF}" font-size="46" fill="{fg}"',start+.45)}</g></g>{desc}</g>'
+ body=f'<defs><clipPath id="card"><rect width="{w}" height="222" rx="14"/></clipPath><clipPath id="slot"><rect x="0" y="62" width="{w}" height="65"/></clipPath><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".38"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><g class="ti" {D(start)}><g clip-path="url(#card)"><rect width="{w}" height="222" fill="{color}"/><circle class="rg" {D(start+.5)} cx="{w-38}" cy="184" r="58" fill="none" stroke="{fg}" stroke-opacity=".5" stroke-width="2"/><rect class="sh" style="animation-delay:{start+1.4:.2f}s" x="0" y="-20" width="90" height="262" fill="url(#gl)"/></g><text class="sl" {D(start+.35)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{fg}">{E(title)}</text><g class="ai" {D(start+.5)}><text class="n" x="{w-38}" y="38" font-family="{MONO}" font-size="14" fill="{fg}">↗</text></g><g clip-path="url(#slot)"><g class="ro" {D(start+.45)}>{counter(ordinal,unit,22,116,f'font-family="{SERIF}" font-size="46" fill="{fg}"',start+.45)}</g></g>{desc}</g>'
  save(filename,body,fonts,w+8,234,f"{title}: {copy}")
 def daily_rows(data):
  result=[]
@@ -157,9 +157,9 @@ def main():
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
  hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts)
- tile("02-tile-1.svg","BUILD",BLUE,"#FFFFFF","01","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
- tile("02-tile-2.svg","DESIGN",RED,"#FFFFFF","02","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
- tile("02-tile-3.svg","EXPLORE",YELLOW,INK,"03","Applied AI, automation and emerging technology.",3.60,fonts)
+ tile("02-tile-1.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
+ tile("02-tile-2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
+ tile("02-tile-3.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
  for i,r in enumerate(data.get("featured_repos",[])[:8]):repo_card(i,r,fonts)
  print(f"Rendered {len(list(OUT.glob('*.svg')))} SVG cards (STATIC={int(STATIC)}).")
 if __name__=="__main__":main()
