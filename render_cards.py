@@ -37,7 +37,7 @@ body+=t(44,172,f"{total:,} contributions · {len(daily)} tracked days",14,500)
 for i,m in enumerate(months):
  x=52+i*82; bh=max(3,monthly[m]/maxv*82); body+=f'<rect x="{x}" y="{260-bh}" width="42" height="{bh}" rx="4" fill="{BLUE}"/>{t(x+21,280,date(m[0],m[1],1).strftime("%b").upper(),10,600,MUTED,MONO)}'
 save('03-activity.svg','Monthly contributions and activity',body,1100,304,1)
-end=max(counts) if counts else date.today(); start=end-timedelta(days=363); start-=timedelta(days=(start.weekday()+1)%7); maxc=max(counts.values()) if counts else 1
+end=max(counts) if counts else date.today(); start=end-timedelta(days=370); maxc=max(counts.values()) if counts else 1
 palette=['#E5E5E5','#DCE4FF','#AFC0FF','#718EFF',BLUE]
 body=f'<rect x="8" y="8" width="1084" height="168" rx="18" fill="{PAPER}"/>{t(38,42,"A YEAR OF SHOWING UP",13,700,MUTED,MONO)}'
 for week in range(53):
