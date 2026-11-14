@@ -13,6 +13,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install renderer dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pillow fonttools brotli
       - name: Fetch contribution calendar and repositories
         env:
           GH_TOKEN: ${{ github.token }}
@@ -26,7 +30,7 @@ jobs:
           user=result['data']['user']; cal=user['contributionsCollection']['contributionCalendar']
           days=[day for week in cal['weeks'] for day in week['contributionDays']]
           repos=[r for r in user['repositories']['nodes'] if not r['isFork']]
-          preferred=['SikhoEasy','LearnWise-Ai','zero-waste-grocery','WindowsAi','Food-Wastage-Reduction']
+          preferred=['SekhoEasy','Learnwise-Ai','WindowsAi','zero-waste-grocery','gdp-dashboard']
           by={r['name'].lower():r for r in repos}; chosen=[by[n.lower()] for n in preferred if n.lower() in by]
           for r in repos:
             if len(chosen)>=5: break
