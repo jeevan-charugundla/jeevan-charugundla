@@ -47,7 +47,12 @@ jobs:
           for r in repos:
             if len(chosen)>=5: break
             if r not in chosen: chosen.append(r)
-          snapshot={'profile':{'name':user.get('name') or 'Jeevan Charugundla'},'daily':days,'featured_repos':[{'name':r['name'],'description':r.get('description') or 'A project built to solve a real problem.','language':(r.get('primaryLanguage') or {}).get('name') or 'Software','html_url':r['url'],'stargazers_count':r['stargazerCount']} for r in chosen[:5]]}
+          curated_descriptions={
+            'learnwise-ai':'AI-powered study platform with Groq question generation, answer evaluation, progress analytics and a conversational study assistant. React + FastAPI + Supabase.',
+            'windowsai':'A Windows desktop AI companion with screen understanding, visual click guidance, chat and voice input. WPF/.NET 8 + TypeScript.',
+            'zero-waste-grocery':'Inventory intelligence for low-waste grocery operations: CSV imports, stock validation and actionable inventory insights. React + FastAPI + Supabase.',
+          }
+          snapshot={'profile':{'name':user.get('name') or 'Jeevan Charugundla'},'daily':days,'featured_repos':[{'name':r['name'],'description':curated_descriptions.get(r['name'].lower(),r.get('description') or 'A project built to solve a real problem.'),'language':(r.get('primaryLanguage') or {}).get('name') or 'Software','html_url':r['url'],'stargazers_count':r['stargazerCount']} for r in chosen[:5]]}
           open('data/contributions.json','w').write(json.dumps(snapshot,indent=2))
           # Keep each visible project's clickable destination in the exact same order as its SVG card.
           import html
@@ -73,11 +78,43 @@ jobs:
         run: python render_cards.py
       - name: Commit refreshed cards
         run: |
+          set -e
           git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.email '41898282+users.noreply.github.com'
+          # Preserve freshly rendered outputs, then rebase the work on the latest README/main.
+          tmp="$(mktemp -d)"
+          cp data/contributions.json "$tmp/contributions.json"
+          cp -a cards "$tmp/cards"
+          cp assets/portrait-embed.jpg "$tmp/portrait-embed.jpg"
+          git fetch origin main
+          git reset --hard origin/main
+          cp "$tmp/contributions.json" data/contributions.json
+          rm -rf cards
+          cp -a "$tmp/cards" cards
+          cp "$tmp/portrait-embed.jpg" assets/portrait-embed.jpg
+          # Rebuild only the marked project section from the same data used for the SVGs.
+          python - <<'PY'
+          import json, html
+          from pathlib import Path
+          data=json.loads(Path('data/contributions.json').read_text(encoding='utf-8'))
+          links=[]
+          for i, repo in enumerate(data.get('featured_repos',[])[:3],1):
+            name=html.escape(repo['name'],quote=True)
+            url=html.escape(repo['html_url'],quote=True)
+            links.append(f'<a href="{url}"><img src="cards/project-{i:02d}.svg" width="32.5%" alt="{name}"/></a>')
+          section='<img src="cards/title-coding.svg" width="100%" alt="What I\'m coding"/>' + chr(10)*2 + chr(10).join(links)
+          path=Path('README.md')
+          readme=path.read_text(encoding='utf-8')
+          start='<!-- FEATURED_PROJECTS_START -->'
+          end='<!-- FEATURED_PROJECTS_END -->'
+          if start not in readme or end not in readme:
+            raise SystemExit('README project markers missing; refusing to rewrite an unmarked section.')
+          before, rest=readme.split(start,1)
+          _, after=rest.split(end,1)
+          path.write_text(before+start+chr(10)+section+chr(10)+end+after,encoding='utf-8')
+          PY
           git add README.md data/contributions.json cards/ assets/portrait-embed.jpg
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh profile cards'
-            git pull --rebase origin main
-            git push
+            git push origin HEAD:main
           fi
