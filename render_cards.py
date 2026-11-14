@@ -219,7 +219,7 @@ def achievement_cards(fonts):
 
 
 def achievement_milestones(fonts):
- items=[("01","FIRST-PLACE WIN",BLUE),("01","PODIUM FINISH",RED),("03","PROJECT SHOWCASES",YELLOW)]
+ items=[("01","FIRST-PLACE WIN",BLUE),("01","THIRD-PLACE FINISH",RED),("03","PROJECT SHOWCASES",YELLOW)]
  w=W/3; h=78; parts=[f'<rect x="0" y="0" width="{W}" height="{h}" rx="13" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
  for i,(num,label,accent) in enumerate(items):
   x=i*w
