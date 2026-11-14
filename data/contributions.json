@@ -1485,27 +1485,27 @@
     },
     {
       "date": "2026-11-14",
-      "contributionCount": 31
+      "contributionCount": 35
     }
   ],
   "featured_repos": [
     {
       "name": "Learnwise-Ai",
-      "description": "AI-powered learning platform: Groq LLM question generation, AI answer evaluation, progress analytics, and a conversational study assistant. FastAPI + React + Supabase + Docker.",
+      "description": "AI-powered study platform with Groq question generation, answer evaluation, progress analytics and a conversational study assistant. React + FastAPI + Supabase.",
       "language": "TypeScript",
       "html_url": "https://github.com/jeevan-charugundla/Learnwise-Ai",
       "stargazers_count": 0
     },
     {
       "name": "WindowsAi",
-      "description": "Windows AI Companion \u2014 a WPF desktop AI assistant that can see your screen and teach you where to click: chat, screen analysis, visual Guide Me target detection with a teaching overlay, and Whisper voice input. WPF/.NET 8 + Node/TypeScript + Groq.",
+      "description": "A Windows desktop AI companion with screen understanding, visual click guidance, chat and voice input. WPF/.NET 8 + TypeScript.",
       "language": "C#",
       "html_url": "https://github.com/jeevan-charugundla/WindowsAi",
       "stargazers_count": 0
     },
     {
       "name": "zero-waste-grocery",
-      "description": "A project built to solve a real problem.",
+      "description": "Inventory intelligence for low-waste grocery operations: CSV imports, stock validation and actionable inventory insights. React + FastAPI + Supabase.",
       "language": "Python",
       "html_url": "https://github.com/jeevan-charugundla/zero-waste-grocery",
       "stargazers_count": 0
