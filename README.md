@@ -20,8 +20,12 @@
 
 <div align="center">
 
-<!-- FEATURED_PROJECTS_START -->\n<img src="cards/title-coding.svg" width="100%" alt="What I'm coding"/>
+<!-- FEATURED_PROJECTS_START -->
+<img src="cards/title-coding.svg" width="100%" alt="What I'm coding"/>
 
-<a href="https://github.com/jeevan-charugundla/Learnwise-Ai"><img src="cards/project-01.svg" width="32.5%" alt="Learnwise-Ai"/></a>\n<a href="https://github.com/jeevan-charugundla/WindowsAi"><img src="cards/project-02.svg" width="32.5%" alt="WindowsAi"/></a>\n<a href="https://github.com/jeevan-charugundla/zero-waste-grocery"><img src="cards/project-03.svg" width="32.5%" alt="zero-waste-grocery"/></a>\n<!-- FEATURED_PROJECTS_END -->
+<a href="https://github.com/jeevan-charugundla/Learnwise-Ai"><img src="cards/project-01.svg" width="32.5%" alt="Learnwise-Ai"/></a>
+<a href="https://github.com/jeevan-charugundla/WindowsAi"><img src="cards/project-02.svg" width="32.5%" alt="WindowsAi"/></a>
+<a href="https://github.com/jeevan-charugundla/zero-waste-grocery"><img src="cards/project-03.svg" width="32.5%" alt="zero-waste-grocery"/></a>
+<!-- FEATURED_PROJECTS_END -->
 
 </div>
