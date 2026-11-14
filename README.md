@@ -25,8 +25,5 @@
 <a href="https://github.com/jeevan-charugundla/SekhoEasy"><img src="cards/project-01.svg" width="32.5%" alt="SekhoEasy"/></a>
 <a href="https://github.com/jeevan-charugundla/Learnwise-Ai"><img src="cards/project-02.svg" width="32.5%" alt="LearnWise AI"/></a>
 <a href="https://github.com/jeevan-charugundla/WindowsAi"><img src="cards/project-03.svg" width="32.5%" alt="Windows AI Companion"/></a>
-<br/>
-<a href="https://github.com/jeevan-charugundla/zero-waste-grocery"><img src="cards/project-04.svg" width="32.5%" alt="Zero-Waste Grocery"/></a>
-<a href="https://github.com/jeevan-charugundla/gdp-dashboard"><img src="cards/project-05.svg" width="32.5%" alt="GDP Dashboard"/></a>
 
 </div>
