@@ -1,1 +1,12 @@
-PLACEHOLDER
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="360" viewBox="0 0 1600 360" role="img" aria-labelledby="title desc">
+<title id="title">From Campus Ideas to Real-World Products</title>
+<desc id="desc">Founder quote in elegant italic typography with the profile's cream, blue, yellow and red palette.</desc>
+<rect x="8" y="8" width="1584" height="344" rx="28" fill="#F3F3F1" stroke="#E2E0DA" stroke-width="2"/>
+<text x="112" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="bold" fill="#EF3B2D">“</text>
+<text x="1488" y="280" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="bold" fill="#EF3B2D">”</text>
+<text x="800" y="160" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-style="italic" font-weight="bold" fill="#171717">From Campus Ideas to</text>
+<path d="M440 184 Q800 198 1160 184" fill="none" stroke="#FFC81A" stroke-width="7" stroke-linecap="round"/>
+<text x="800" y="268" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-style="italic" font-weight="bold" fill="#2F55FF">Real-World Products.</text>
+<path d="M555 292 Q800 316 1045 292" fill="none" stroke="#2F55FF" stroke-width="5" stroke-linecap="round"/>
+<circle cx="135" cy="82" r="6" fill="#FFC81A"/><circle cx="1465" cy="82" r="6" fill="#2F55FF"/>
+</svg>
