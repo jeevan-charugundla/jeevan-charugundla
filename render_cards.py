@@ -31,7 +31,7 @@ monthly=defaultdict(int)
 for day,count in counts.items(): monthly[(day.year,day.month)]+=count
 months=sorted(monthly)[-12:]; maxv=max([monthly[m] for m in months] or [1])
 body=f'<rect x="8" y="8" width="1084" height="284" rx="18" fill="{PAPER}"/>{t(44,48,"CONTRIBUTION RHYTHM",14,700,MUTED,MONO)}'
-for i,(cap,val,col) in enumerate([("CURRENT STREAK",f"{streak} days","#DCE4FF"),("ACTIVE DAYS",str(active),"#F9DCE7"),("BUSIEST DAY",f"{busiest[0].strftime("%b %d")} · {busiest[1]}","#E0E7FF")]):
+for i,(cap,val,col) in enumerate([("CURRENT STREAK",f"{streak} days","#DCE4FF"),("ACTIVE DAYS",str(active),"#F9DCE7"),("BUSIEST DAY",f"{busiest[0].strftime('%b %d')} · {busiest[1]}","#E0E7FF")]):
  x=44+i*342; body+=f'<rect x="{x}" y="68" width="310" height="68" rx="9" fill="{col}"/>{t(x+16,94,cap,11,700,MUTED,MONO)}{t(x+16,122,val,22,700)}'
 body+=t(44,172,f"{total:,} contributions · {len(daily)} tracked days",14,500)
 for i,m in enumerate(months):
