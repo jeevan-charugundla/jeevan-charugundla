@@ -52,4 +52,12 @@
 
 </div>
 
+---
+
+<div align="center">
+
+<img src="cards/founder-quote.svg" width="100%" alt="From Campus Ideas to Real-World Products."/>
+
+</div>
+
 </div>
