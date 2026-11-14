@@ -25,20 +25,17 @@ jobs:
         run: |
           python - <<'PY'
           import json, os, urllib.request
-          query='''query { user(login:"jeevan-charugundla") { name avatarUrl(size:512) contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,orderBy:{field:UPDATED_AT,direction:DESC}) { nodes { name description url stargazerCount isFork primaryLanguage { name } } } } }'''
+          query='''query { user(login:"jeevan-charugundla") { name contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,orderBy:{field:UPDATED_AT,direction:DESC}) { nodes { name description url stargazerCount isFork primaryLanguage { name } } } } }'''
           req=urllib.request.Request('https://api.github.com/graphql',data=json.dumps({'query':query}).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Content-Type':'application/json'})
           result=json.load(urllib.request.urlopen(req))
           if result.get('errors'): raise SystemExit(json.dumps(result['errors']))
           user=result['data']['user']
-          # Refresh the portrait from the live GitHub avatar and re-encode it as a clean JPEG.
-          # This prevents a truncated/corrupt checked-in image from breaking the renderer.
-          from io import BytesIO
-          from PIL import Image
-          avatar_url=user.get('avatarUrl')
-          if not avatar_url: raise SystemExit('GitHub did not return an avatar URL')
-          with urllib.request.urlopen(avatar_url,timeout=30) as response: avatar_bytes=response.read()
-          with Image.open(BytesIO(avatar_bytes)) as avatar:
-            avatar.convert('RGB').save('assets/portrait-embed.jpg','JPEG',quality=95,optimize=True)
+          # Restore the exact portrait image supplied for this README (stored as base64 text).
+          import base64
+          with open('assets/portrait-source.jpg.b64','rb') as source:
+            portrait_bytes=base64.b64decode(source.read())
+          with open('assets/portrait-embed.jpg','wb') as target:
+            target.write(portrait_bytes)
           cal=user['contributionsCollection']['contributionCalendar']
           days=[day for week in cal['weeks'] for day in week['contributionDays']]
           repos=[r for r in user['repositories']['nodes'] if not r['isFork']]
