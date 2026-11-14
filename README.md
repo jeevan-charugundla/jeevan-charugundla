@@ -48,7 +48,7 @@
 
 <img src="cards/06-achievements.svg" width="100%" alt="Hackathon awards and project showcases"/>
 
-<img src="cards/07-milestones.svg" width="100%" alt="Achievement milestones"/>
+<img src="cards/07-milestones-v2.svg" width="100%" alt="Achievement milestones"/>
 
 </div>
 
