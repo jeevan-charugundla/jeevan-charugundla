@@ -174,11 +174,16 @@ def tech_stack(fonts):
    parts.append(f'<g class="r" style="animation-delay:{.35+i*.12+j*.07:.2f}s"><circle cx="{x+28}" cy="{yy-5}" r="3.5" fill="{accent}"/>{T(x+42,yy,item,14,600,INK,SANS)}</g>')
  save("05-tech-stack.svg","".join(parts),fonts,W,h,"Tech stack: React, TypeScript, Flutter, Python, FastAPI, Node.js, Gemini, Groq, TensorFlow Lite, Supabase, PostgreSQL, MySQL, Git, Docker and VS Code")
 
+
+def section_title_stack(fonts):
+ body=f'<text class="r" {D(4.5)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{INK}">My <tspan font-style="italic">tech stack</tspan></text>'
+ save("title-stack.svg",body,fonts,W,64,"My tech stack")
+
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
- hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts); tech_stack(fonts)
+ hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts); section_title_stack(fonts); tech_stack(fonts)
  tile("02-tile-1-v2.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
  tile("02-tile-2-v2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
  tile("02-tile-3-v2.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
