@@ -3,7 +3,8 @@
 import base64,datetime,html,json,os,re,subprocess,tempfile,urllib.request
 from collections import defaultdict
 from pathlib import Path
-from PIL import Image,ImageOps,ImageEnhance
+from PIL import Image,ImageOps,ImageEnhance,ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES=True
 R=Path(__file__).resolve().parent; DATA=R/"data/contributions.json"; OUT=R/"cards"; FD=R/"assets/fonts"; PHOTO=R/"assets/portrait-embed.jpg"
 STATIC=os.getenv("STATIC","0")=="1"; W=880
 PAPER="#F3F3F1"; DEEP="#E2E2DE"; INK="#111111"; SOFT="#3A3A3C"; MUTED="#6E6E73"; RULE="#DCDCD7"; BLUE="#2F55FF"; RED="#EF3B2D"; YELLOW="#FFC81A"
