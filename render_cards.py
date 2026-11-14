@@ -156,7 +156,7 @@ def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
- hero(fonts); heatmap(rows,fonts); activity(rows,fonts)
+ hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts)
  tile("02-tile-1.svg","BUILD",BLUE,"#FFFFFF","01","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
  tile("02-tile-2.svg","DESIGN",RED,"#FFFFFF","02","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
  tile("02-tile-3.svg","EXPLORE",YELLOW,INK,"03","Applied AI, automation and emerging technology.",3.60,fonts)
