@@ -49,6 +49,25 @@ jobs:
             if r not in chosen: chosen.append(r)
           snapshot={'profile':{'name':user.get('name') or 'Jeevan Charugundla'},'daily':days,'featured_repos':[{'name':r['name'],'description':r.get('description') or 'A project built to solve a real problem.','language':(r.get('primaryLanguage') or {}).get('name') or 'Software','html_url':r['url'],'stargazers_count':r['stargazerCount']} for r in chosen[:5]]}
           open('data/contributions.json','w').write(json.dumps(snapshot,indent=2))
+          # Keep each visible project's clickable destination in the exact same order as its SVG card.
+          import html
+          project_links=[]
+          for i, repo in enumerate(snapshot['featured_repos'][:3], 1):
+            name=html.escape(repo['name'], quote=True)
+            url=html.escape(repo['html_url'], quote=True)
+            project_links.append(f'<a href="{url}"><img src="cards/project-{i:02d}.svg" width="32.5%" alt="{name}"/></a>')
+          project_section='''<img src="cards/title-coding.svg" width="100%" alt="What I'm coding"/>
+
+          ''' + '\\n'.join(project_links)
+          readme_path='README.md'
+          readme=open(readme_path,encoding='utf-8').read()
+          start='<!-- FEATURED_PROJECTS_START -->'
+          end='<!-- FEATURED_PROJECTS_END -->'
+          if start not in readme or end not in readme:
+            raise SystemExit('README featured-project markers are missing; refusing to rewrite the wrong section.')
+          before, remainder=readme.split(start,1)
+          _, after=remainder.split(end,1)
+          open(readme_path,'w',encoding='utf-8').write(before+start+'\\n'+project_section+'\\n'+end+after)
           PY
       - name: Render SVG cards
         run: python render_cards.py
@@ -56,7 +75,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/contributions.json cards/ assets/portrait-embed.jpg
+          git add README.md data/contributions.json cards/ assets/portrait-embed.jpg
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh profile cards'
             git pull --rebase origin main
