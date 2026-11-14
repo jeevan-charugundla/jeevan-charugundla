@@ -219,15 +219,30 @@ def achievement_cards(fonts):
 
 
 def achievement_milestones(fonts):
- items=[("01","FIRST-PLACE WIN",BLUE),("01","THIRD-PLACE FINISH",RED),("03","PROJECT SHOWCASES",YELLOW)]
- w=W/3; h=78; parts=[f'<rect x="0" y="0" width="{W}" height="{h}" rx="13" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
- for i,(num,label,accent) in enumerate(items):
+ items=[
+  ("10+","Projects Built",BLUE,"code"),
+  ("3+","Hackathons Won",RED,"trophy"),
+  ("5+","Finalist / Recognitions",YELLOW,"award"),
+  ("2+","Technical Clubs / Communities",BLUE,"users"),
+ ]
+ w=W/4; h=112; parts=[f'<rect x="0" y="0" width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
+ for i,(num,label,accent,kind) in enumerate(items):
   x=i*w
-  if i: parts.append(f'<line x1="{x}" y1="16" x2="{x}" y2="{h-16}" stroke="{RULE}" stroke-width="1"/>')
-  parts.append(f'<rect x="{x+20}" y="22" width="34" height="34" rx="10" fill="{accent}"/>')
-  parts.append(T(x+31,45,num,13,600,INK if accent==YELLOW else PAPER,MONO))
-  parts.append(T(x+68,44,label,12,600,INK,SANS))
- save("07-milestones.svg","".join(parts),fonts,W,h,"Milestones: one first-place win, one podium finish and three project showcases")
+  if i: parts.append(f'<line x1="{x}" y1="18" x2="{x}" y2="{h-18}" stroke="{RULE}" stroke-width="1"/>')
+  bx=x+22; by=29; cx=bx+27; cy=by+27
+  parts.append(f'<rect x="{bx}" y="{by}" width="54" height="54" rx="15" fill="{accent}"/>')
+  if kind=="code":
+   parts.append(f'<path d="M{cx-13} {cy-5} l-8 5 8 5 M{cx+13} {cy-5} l8 5 -8 5 M{cx+4} {cy-13} l-8 26" fill="none" stroke="{PAPER}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>')
+  elif kind=="trophy":
+   parts.append(f'<path d="M{cx-9} {cy-12} h18 v10 q0 10 -9 10 q-9 0 -9 -10z M{cx-9} {cy-7} h-7 q0 11 9 12 M{cx+9} {cy-7} h7 q0 11 -9 12 M{cx} {cy+8} v7 M{cx-9} {cy+16} h18" fill="none" stroke="{PAPER}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>')
+  elif kind=="award":
+   parts.append(f'<circle cx="{cx}" cy="{cy-5}" r="10" fill="none" stroke="{PAPER}" stroke-width="3"/><path d="M{cx-6} {cy+4} l-4 14 10 -5 10 5 -4 -14" fill="{PAPER}" stroke="{PAPER}" stroke-linejoin="round"/>')
+  else:
+   parts.append(f'<circle cx="{cx}" cy="{cy-8}" r="6" fill="{PAPER}"/><circle cx="{cx-13}" cy="{cy-3}" r="5" fill="{PAPER}"/><circle cx="{cx+13}" cy="{cy-3}" r="5" fill="{PAPER}"/><path d="M{cx-12} {cy+14} q0 -12 12 -12 q12 0 12 12 M{cx-25} {cy+12} q0 -9 9 -9 M{cx+25} {cy+12} q0 -9 -9 -9" fill="none" stroke="{PAPER}" stroke-width="4" stroke-linecap="round"/>')
+  parts.append(T(x+88,by+25,num,30,600,INK,SANS))
+  fs=10.5 if len(label)>22 else 12
+  parts.append(T(x+88,by+45,label,fs,500,INK,SANS))
+ save("07-milestones-v2.svg","".join(parts),fonts,W,h,"Milestones: 10 plus projects built, 3 plus hackathons won, 5 plus finalist recognitions and 2 plus technical clubs or communities")
 
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
