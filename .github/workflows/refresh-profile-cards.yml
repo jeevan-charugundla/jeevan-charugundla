@@ -25,11 +25,21 @@ jobs:
         run: |
           python - <<'PY'
           import json, os, urllib.request
-          query='''query { user(login:"jeevan-charugundla") { name contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,orderBy:{field:UPDATED_AT,direction:DESC}) { nodes { name description url stargazerCount isFork primaryLanguage { name } } } } }'''
+          query='''query { user(login:"jeevan-charugundla") { name avatarUrl(size:512) contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,orderBy:{field:UPDATED_AT,direction:DESC}) { nodes { name description url stargazerCount isFork primaryLanguage { name } } } } }'''
           req=urllib.request.Request('https://api.github.com/graphql',data=json.dumps({'query':query}).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Content-Type':'application/json'})
           result=json.load(urllib.request.urlopen(req))
           if result.get('errors'): raise SystemExit(json.dumps(result['errors']))
-          user=result['data']['user']; cal=user['contributionsCollection']['contributionCalendar']
+          user=result['data']['user']
+          # Refresh the portrait from the live GitHub avatar and re-encode it as a clean JPEG.
+          # This prevents a truncated/corrupt checked-in image from breaking the renderer.
+          from io import BytesIO
+          from PIL import Image
+          avatar_url=user.get('avatarUrl')
+          if not avatar_url: raise SystemExit('GitHub did not return an avatar URL')
+          with urllib.request.urlopen(avatar_url,timeout=30) as response: avatar_bytes=response.read()
+          with Image.open(BytesIO(avatar_bytes)) as avatar:
+            avatar.convert('RGB').save('assets/portrait-embed.jpg','JPEG',quality=95,optimize=True)
+          cal=user['contributionsCollection']['contributionCalendar']
           days=[day for week in cal['weeks'] for day in week['contributionDays']]
           repos=[r for r in user['repositories']['nodes'] if not r['isFork']]
           preferred=['SekhoEasy','Learnwise-Ai','WindowsAi','zero-waste-grocery','gdp-dashboard']
