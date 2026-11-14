@@ -1,0 +1,26 @@
+{
+  "profile": {
+    "name": "Jeevan Charugundla"
+  },
+  "daily": [],
+  "featured_repos": [
+    {
+      "name": "SikhoEasy",
+      "description": "AI-powered learning with concept reels, interactive MCQs and an AI tutor.",
+      "language": "Flutter / AI",
+      "html_url": "https://github.com/jeevan-charugundla"
+    },
+    {
+      "name": "LearnWise AI",
+      "description": "Personalized student learning, performance insights and adaptive practice.",
+      "language": "React / TypeScript",
+      "html_url": "https://github.com/Kruthi-choudary/learnwise-ai"
+    },
+    {
+      "name": "Zero-Waste Grocery",
+      "description": "Agentic AI for inventory intelligence and food-waste reduction.",
+      "language": "Python / FastAPI",
+      "html_url": "https://github.com/jeevan-charugundla"
+    }
+  ]
+}

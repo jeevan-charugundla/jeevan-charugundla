@@ -1,0 +1,44 @@
+name: Refresh animated profile cards
+on:
+  schedule:
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch contribution calendar and repositories
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          query='''query { user(login:"jeevan-charugundla") { name contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,orderBy:{field:UPDATED_AT,direction:DESC}) { nodes { name description url stargazerCount isFork primaryLanguage { name } } } } }'''
+          req=urllib.request.Request('https://api.github.com/graphql',data=json.dumps({'query':query}).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Content-Type':'application/json'})
+          result=json.load(urllib.request.urlopen(req))
+          if result.get('errors'): raise SystemExit(json.dumps(result['errors']))
+          user=result['data']['user']; cal=user['contributionsCollection']['contributionCalendar']
+          days=[day for week in cal['weeks'] for day in week['contributionDays']]
+          repos=[r for r in user['repositories']['nodes'] if not r['isFork']]
+          preferred=['SikhoEasy','LearnWise-Ai','zero-waste-grocery','WindowsAi','Food-Wastage-Reduction']
+          by={r['name'].lower():r for r in repos}; chosen=[by[n.lower()] for n in preferred if n.lower() in by]
+          for r in repos:
+            if len(chosen)>=5: break
+            if r not in chosen: chosen.append(r)
+          snapshot={'profile':{'name':user.get('name') or 'Jeevan Charugundla'},'daily':days,'featured_repos':[{'name':r['name'],'description':r.get('description') or 'A project built to solve a real problem.','language':(r.get('primaryLanguage') or {}).get('name') or 'Software','html_url':r['url'],'stargazers_count':r['stargazerCount']} for r in chosen[:5]]}
+          open('data/contributions.json','w').write(json.dumps(snapshot,indent=2))
+          PY
+      - name: Render SVG cards
+        run: python render_cards.py
+      - name: Commit refreshed cards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/contributions.json cards/
+          git diff --cached --quiet || (git commit -m 'chore: refresh profile cards' && git push)
