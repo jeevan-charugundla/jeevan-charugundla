@@ -157,9 +157,9 @@ def main():
  chars=json.dumps(data,ensure_ascii=False)+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?/+-_()[]↗∞·★"
  fonts=font_css(chars); OUT.mkdir(parents=True,exist_ok=True)
  hero(fonts); heatmap(rows,fonts); activity(rows,fonts); section_title(fonts)
- tile("02-tile-1.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
- tile("02-tile-2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
- tile("02-tile-3.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
+ tile("02-tile-1-v2.svg","BUILD",BLUE,"#FFFFFF","01","products","AI-powered apps, full-stack products and useful tools.",3.10,fonts)
+ tile("02-tile-2-v2.svg","DESIGN",RED,"#FFFFFF","02","experiences","Responsive interfaces, thoughtful UX and polished experiences.",3.35,fonts)
+ tile("02-tile-3-v2.svg","EXPLORE",YELLOW,INK,"03","innovation","Applied AI, automation and emerging technology.",3.60,fonts)
  for i,r in enumerate(data.get("featured_repos",[])[:8]):repo_card(i,r,fonts)
  print(f"Rendered {len(list(OUT.glob('*.svg')))} SVG cards (STATIC={int(STATIC)}).")
 if __name__=="__main__":main()
