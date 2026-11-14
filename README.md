@@ -29,3 +29,15 @@
 <!-- FEATURED_PROJECTS_END -->
 
 </div>
+
+---
+
+<div align="center">
+
+<img src="cards/title-stack.svg" width="100%" alt="My tech stack"/>
+
+<img src="cards/05-tech-stack.svg" width="100%" alt="Technologies grouped by frontend, backend, AI and ML, database, and tools"/>
+
+</div>
+
+</div>
