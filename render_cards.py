@@ -3,8 +3,7 @@
 import base64,datetime,html,json,os,re,subprocess,tempfile,urllib.request
 from collections import defaultdict
 from pathlib import Path
-from PIL import Image,ImageOps,ImageEnhance,ImageFile
-ImageFile.LOAD_TRUNCATED_IMAGES=True
+from PIL import Image,ImageOps,ImageEnhance
 R=Path(__file__).resolve().parent; DATA=R/"data/contributions.json"; OUT=R/"cards"; FD=R/"assets/fonts"; PHOTO=R/"assets/portrait-embed.jpg"
 STATIC=os.getenv("STATIC","0")=="1"; W=880
 PAPER="#F3F3F1"; DEEP="#E2E2DE"; INK="#111111"; SOFT="#3A3A3C"; MUTED="#6E6E73"; RULE="#DCDCD7"; BLUE="#2F55FF"; RED="#EF3B2D"; YELLOW="#FFC81A"
@@ -71,9 +70,13 @@ def svg(w,h,body,fonts,label):
  return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" role="img" aria-label="{E(label)}"><title>{E(label)}</title><style>{css}</style>{body}</svg>'
 def save(name,body,fonts,w,h,label): (OUT/name).write_text(svg(w,h,body,fonts,label),encoding="utf-8")
 def ascii_portrait():
- im=ImageOps.exif_transpose(Image.open(PHOTO)).convert("L"); w,h=im.size
- im=im.crop((int(w*.30),int(h*.43),int(w*.86),int(h*.94)))
- im=ImageOps.fit(im,(100,84),method=Image.Resampling.LANCZOS,centering=(.52,.48)); im=ImageEnhance.Contrast(im).enhance(1.35); px=im.load(); ramp=" .,:;irsXA253hMHGS#9B&@"
+ # The workflow replaces this file with a freshly downloaded, validated GitHub avatar.
+ # Use the complete square avatar; an off-centre crop can cut away the face.
+ with Image.open(PHOTO) as source:
+  im=ImageOps.exif_transpose(source).convert("L")
+ im=ImageOps.fit(im,(100,84),method=Image.Resampling.LANCZOS,centering=(.5,.42))
+ im=ImageEnhance.Contrast(im).enhance(1.25)
+ px=im.load(); ramp=" .,:;irsXA253hMHGS#9B&@"
  return ["".join(ramp[min(len(ramp)-1,int((255-px[x,y])/256*len(ramp)))] for x in range(im.width)) for y in range(im.height)]
 def hero(fonts):
  rows=ascii_portrait(); portrait=[]
