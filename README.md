@@ -2,24 +2,31 @@
 
 <img src="cards/01-hero.svg" width="100%" alt="Jeevan Charugundla — AI Product Engineer"/>
 
-<img src="cards/04-heatmap.svg" width="100%" alt="GitHub contribution heatmap"/>
+<img src="cards/04-heatmap.svg" width="100%" alt="Blue GitHub contribution graph"/>
 
-<img src="cards/03-activity.svg" width="100%" alt="Monthly contributions, streak, active days and busiest day"/>
+<img src="cards/03-activity.svg" width="100%" alt="Monthly contribution chart, streak, active days and busiest day"/>
 
-<table>
-<tr>
-<td width="33%"><a href="https://github.com/jeevan-charugundla"><img src="cards/02-tile-1.svg" width="100%" alt="Build — AI and Engineering"/></a></td>
-<td width="33%"><a href="https://jeevan-portfolio-delta.vercel.app/"><img src="cards/02-tile-2.svg" width="100%" alt="Create — Design and Experience"/></a></td>
-<td width="33%"><a href="https://www.linkedin.com/in/jeevan-charugundla/"><img src="cards/02-tile-3.svg" width="100%" alt="Learn — Explore and Experiment"/></a></td>
-</tr>
-</table>
-
-## WHAT I'M BUILDING
-
-<img src="cards/project-01.svg" width="100%" alt="SikhoEasy"/>
-<img src="cards/project-02.svg" width="100%" alt="LearnWise AI"/>
-<img src="cards/project-03.svg" width="100%" alt="Zero-Waste Grocery"/>
+<p>
+<a href="https://github.com/jeevan-charugundla"><img src="cards/02-tile-1.svg" width="32.5%" alt="BUILD — AI and engineering"/></a>
+<a href="https://jeevan-portfolio-delta.vercel.app/"><img src="cards/02-tile-2.svg" width="32.5%" alt="CREATE — design and experience"/></a>
+<a href="https://www.linkedin.com/in/jeevan-charugundla/"><img src="cards/02-tile-3.svg" width="32.5%" alt="LEARN — explore and experiment"/></a>
+</p>
 
 **BUILD WITH INTENT. CREATE WITH CURIOSITY.**
+
+</div>
+
+---
+
+<div align="center">
+
+## WHAT I'M CODING
+
+<a href="https://github.com/jeevan-charugundla/SekhoEasy"><img src="cards/project-01.svg" width="32.5%" alt="SekhoEasy"/></a>
+<a href="https://github.com/jeevan-charugundla/Learnwise-Ai"><img src="cards/project-02.svg" width="32.5%" alt="LearnWise AI"/></a>
+<a href="https://github.com/jeevan-charugundla/WindowsAi"><img src="cards/project-03.svg" width="32.5%" alt="Windows AI Companion"/></a>
+<br/>
+<a href="https://github.com/jeevan-charugundla/zero-waste-grocery"><img src="cards/project-04.svg" width="32.5%" alt="Zero-Waste Grocery"/></a>
+<a href="https://github.com/jeevan-charugundla/gdp-dashboard"><img src="cards/project-05.svg" width="32.5%" alt="GDP Dashboard"/></a>
 
 </div>
