@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="cards/01-hero.svg" width="100%" alt="Jeevan Charugundla — AI Product Engineer"/>
+<img src="cards/01-hero-v2.svg" width="100%" alt="Jeevan Charugundla — AI Product Engineer"/>
 
 <img src="cards/04-heatmap.svg" width="100%" alt="Blue GitHub contribution graph"/>
 
