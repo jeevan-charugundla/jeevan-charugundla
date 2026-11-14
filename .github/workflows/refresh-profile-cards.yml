@@ -58,7 +58,7 @@ jobs:
             project_links.append(f'<a href="{url}"><img src="cards/project-{i:02d}.svg" width="32.5%" alt="{name}"/></a>')
           project_section='''<img src="cards/title-coding.svg" width="100%" alt="What I'm coding"/>
 
-          ''' + '\\n'.join(project_links)
+          ''' + '\n'.join(project_links)
           readme_path='README.md'
           readme=open(readme_path,encoding='utf-8').read()
           start='<!-- FEATURED_PROJECTS_START -->'
@@ -67,7 +67,7 @@ jobs:
             raise SystemExit('README featured-project markers are missing; refusing to rewrite the wrong section.')
           before, remainder=readme.split(start,1)
           _, after=remainder.split(end,1)
-          open(readme_path,'w',encoding='utf-8').write(before+start+'\\n'+project_section+'\\n'+end+after)
+          open(readme_path,'w',encoding='utf-8').write(before+start+'\n'+project_section+'\n'+end+after)
           PY
       - name: Render SVG cards
         run: python render_cards.py
