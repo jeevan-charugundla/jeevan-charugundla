@@ -187,7 +187,7 @@ def section_title_achievements(fonts):
 
 
 def achievement_cards(fonts):
- # Three editorial cards: awards are separated from project showcases so no rank is implied.
+ # Match the BUILD / DESIGN / EXPLORE tile entrance animation.
  cards=[
   {"title":"Tech for Good 2026","award":"1ST PRIZE","project":"Elevate OS","desc":["A student-focused platform for learning,","productivity, opportunities and growth."],"tags":["Student platform","Product design"],"accent":BLUE},
   {"title":"InnoQuest 2025","award":"3RD PLACE","project":"Sustainable Transportation","desc":["A sustainable commuting app designed","to encourage eco-friendly travel."],"tags":["Microsoft Azure","Sustainability"],"accent":RED},
@@ -196,10 +196,8 @@ def achievement_cards(fonts):
  card_w=280; gap=20; h=250; y=8
  parts=[]
  for i,c in enumerate(cards):
-  x=i*(card_w+gap)
-  a=c["accent"]
-  parts.append(f'<g class="r" style="animation-delay:{.15+i*.12:.2f}s"><rect x="{x}" y="{y}" width="{card_w}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/><path d="M{x} {y+h-44} L{x} {y+h-14} Q{x} {y+h} {x+14} {y+h} L{x+44} {y+h} Z" fill="{a}"/></g>')
-  # Simple geometric medal motif, avoiding emoji/font fallback.
+  x=i*(card_w+gap); a=c["accent"]
+  parts.append(f'<g class="ti" style="animation-delay:{.15+i*.18:.2f}s"><rect x="{x}" y="{y}" width="{card_w}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/><path d="M{x} {y+h-44} L{x} {y+h-14} Q{x} {y+h} {x+14} {y+h} L{x+44} {y+h} Z" fill="{a}"/>')
   cx=x+38; cy=y+52
   parts.append(f'<circle cx="{cx}" cy="{cy}" r="22" fill="{a}" opacity=".16"/><circle cx="{cx}" cy="{cy}" r="14" fill="{a}"/><path d="M{cx-6} {cy} l4 4 8 -9" fill="none" stroke="{PAPER}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>')
   parts.append(T(x+74,y+35,c["title"],16,600,INK,SANS))
@@ -215,7 +213,8 @@ def achievement_cards(fonts):
    parts.append(f'<rect x="{tx}" y="{y+194}" width="{tw}" height="22" rx="11" fill="none" stroke="{RULE}" stroke-width="1.2"/>')
    parts.append(T(tx+9,y+209,tag,9,600,SOFT,SANS))
    tx+=tw+7
- save("06-achievements.svg","".join(parts),fonts,W,h+16,"Achievements: Tech for Good 2026 first prize for Elevate OS; InnoQuest 2025 third place for a sustainable transportation app; project showcases Freshwise, Kisaan AI and AlgoHack")
+  parts.append("</g>")
+ save("06-achievements-v2.svg","".join(parts),fonts,W,h+16,"Achievements: Tech for Good 2026 first prize for Elevate OS; InnoQuest 2025 third place for a sustainable transportation app; project showcases Freshwise, Kisaan AI and AlgoHack")
 
 
 def achievement_milestones(fonts):
@@ -223,7 +222,7 @@ def achievement_milestones(fonts):
   ("10+","Projects Built",BLUE,"code"),
   ("3+","Hackathons Won",RED,"trophy"),
   ("5+","Finalist / Recognitions",YELLOW,"award"),
-  ("2+","Technical Clubs / Communities",BLUE,"users"),
+  ("2+",("DevUp Society","Quantum Computing Club"),BLUE,"users"),
  ]
  w=W/4; h=112; parts=[f'<rect x="0" y="0" width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}" stroke-width="1"/>']
  for i,(num,label,accent,kind) in enumerate(items):
@@ -238,11 +237,16 @@ def achievement_milestones(fonts):
   elif kind=="award":
    parts.append(f'<circle cx="{cx}" cy="{cy-5}" r="10" fill="none" stroke="{PAPER}" stroke-width="3"/><path d="M{cx-6} {cy+4} l-4 14 10 -5 10 5 -4 -14" fill="{PAPER}" stroke="{PAPER}" stroke-linejoin="round"/>')
   else:
-   parts.append(f'<circle cx="{cx}" cy="{cy-8}" r="6" fill="{PAPER}"/><circle cx="{cx-13}" cy="{cy-3}" r="5" fill="{PAPER}"/><circle cx="{cx+13}" cy="{cy-3}" r="5" fill="{PAPER}"/><path d="M{cx-12} {cy+14} q0 -12 12 -12 q12 0 12 12 M{cx-25} {cy+12} q0 -9 9 -9 M{cx+25} {cy+12} q0 -9 -9 -9" fill="none" stroke="{PAPER}" stroke-width="4" stroke-linecap="round"/>')
+   # Three separated people, with clear heads and shoulder silhouettes.
+   parts.append(f'<circle cx="{cx}" cy="{cy-9}" r="5.5" fill="{PAPER}"/><circle cx="{cx-14}" cy="{cy-5}" r="4.5" fill="{PAPER}"/><circle cx="{cx+14}" cy="{cy-5}" r="4.5" fill="{PAPER}"/><path d="M{cx-11} {cy+13} C{cx-11} {cy+2} {cx-5} {cy-1} {cx} {cy-1} C{cx+5} {cy-1} {cx+11} {cy+2} {cx+11} {cy+13} Z M{cx-25} {cy+12} C{cx-25} {cy+4} {cx-20} {cy+1} {cx-15} {cy+2} M{cx+25} {cy+12} C{cx+25} {cy+4} {cx+20} {cy+1} {cx+15} {cy+2}" fill="none" stroke="{PAPER}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>')
   parts.append(T(x+88,by+25,num,30,600,INK,SANS))
-  fs=10.5 if len(label)>22 else 12
-  parts.append(T(x+88,by+45,label,fs,500,INK,SANS))
- save("07-milestones-v2.svg","".join(parts),fonts,W,h,"Milestones: 10 plus projects built, 3 plus hackathons won, 5 plus finalist recognitions and 2 plus technical clubs or communities")
+  if isinstance(label,tuple):
+   parts.append(T(x+88,by+43,label[0],9.4,500,INK,SANS))
+   parts.append(T(x+88,by+56,label[1],9.4,500,INK,SANS))
+  else:
+   fs=10.5 if len(label)>22 else 12
+   parts.append(T(x+88,by+45,label,fs,500,INK,SANS))
+ save("07-milestones-v3.svg","".join(parts),fonts,W,h,"Milestones: 10 plus projects built, 3 plus hackathons won, 5 plus finalist recognitions, and involvement in DevUp Society and Quantum Computing Club")
 
 def main():
  ensure_fonts(); data=json.loads(DATA.read_text(encoding="utf-8")); rows=daily_rows(data)
