@@ -70,21 +70,20 @@ def svg(w,h,body,fonts,label):
  return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" role="img" aria-label="{E(label)}"><title>{E(label)}</title><style>{css}</style>{body}</svg>'
 def save(name,body,fonts,w,h,label): (OUT/name).write_text(svg(w,h,body,fonts,label),encoding="utf-8")
 def ascii_portrait():
- # The workflow refreshes this file from the current GitHub profile avatar.
- # Increase local contrast so facial features remain legible at README display size.
+ # Use the exact portrait supplied by Jeevan; normalize contrast for a readable ASCII rendering.
  with Image.open(PHOTO) as source:
   im=ImageOps.exif_transpose(source).convert("L")
- im=ImageOps.fit(im,(100,84),method=Image.Resampling.LANCZOS,centering=(.5,.42))
+ im=ImageOps.fit(im,(90,84),method=Image.Resampling.LANCZOS,centering=(.5,.48))
  im=ImageOps.autocontrast(im,cutoff=1)
- im=ImageEnhance.Contrast(im).enhance(1.8)
- px=im.load(); ramp=" .'\u0060,:;irsXA253hMHGS#9B&@"
+ im=ImageEnhance.Contrast(im).enhance(1.55)
+ px=im.load(); ramp=" .,:;irsXA253hMHGS#9B&@"
  return ["".join(ramp[min(len(ramp)-1,int((255-px[x,y])/256*len(ramp)))] for x in range(im.width)) for y in range(im.height)]
 def hero(fonts):
  rows=ascii_portrait(); portrait=[]
  for i,row in enumerate(rows): portrait.append(f'<text xml:space="preserve" x="20" y="{37+i*8.2:.1f}" fill="#171717" font-size="8.2" textLength="800" lengthAdjust="spacing">{E(row)}</text>')
  grad=f'<linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0"><stop offset="0" stop-color="{INK}"/><stop offset=".42" stop-color="{INK}"/><stop offset=".5" stop-color="{BLUE}"/><stop offset=".58" stop-color="{INK}"/><stop offset="1" stop-color="{INK}"/><animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0" keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/></linearGradient>'
  body=f'<defs>{grad}</defs><rect width="{W}" height="420" rx="14" fill="{PAPER}"/><g class="f" {D(0)}><rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{BLUE}"/>{T(66,57,"AI PRODUCT ENGINEER / FULL-STACK BUILDER",12,400,MUTED,MONO,'letter-spacing="1"')}</g><text class="r" {D(.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Jeevan</text><text class="r" {D(.30)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="108" letter-spacing="-2.5" fill="url(#shine)">Charugundla</text><g class="r" {D(.55)}>{textlines(48,338,["I build AI-powered products, engineer useful experiences,","and turn ideas into reality."],27,f'font-family="{SANS}" font-size="18" fill="{SOFT}"')}</g><g transform="translate(520 55) scale(.41) translate(-20 -37)" font-family="ui-monospace,Menlo,Consolas,monospace">{''.join(portrait)}</g>'
- save("01-hero.svg",body,fonts,W,420,"Jeevan Charugundla — AI Product Engineer")
+ save("01-hero-v2.svg",body,fonts,W,420,"Jeevan Charugundla — AI Product Engineer")
 def counter(num,unit,x,y,attrs,start):
  m=re.match(r"([\d.]+)(.*)",str(num)); n=float(m.group(1)); suffix=m.group(2); decimals=len(m.group(1).split(".")[1]) if "." in m.group(1) else 0
  tail=f' <tspan font-style="italic">{E(unit)}</tspan>'
