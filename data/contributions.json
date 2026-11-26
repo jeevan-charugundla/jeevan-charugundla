@@ -557,7 +557,7 @@
     },
     {
       "date": "2026-04-10",
-      "contributionCount": 5
+      "contributionCount": 4
     },
     {
       "date": "2026-04-11",
@@ -565,7 +565,7 @@
     },
     {
       "date": "2026-04-12",
-      "contributionCount": 2
+      "contributionCount": 1
     },
     {
       "date": "2026-04-13",
@@ -577,7 +577,7 @@
     },
     {
       "date": "2026-04-15",
-      "contributionCount": 7
+      "contributionCount": 5
     },
     {
       "date": "2026-04-16",
@@ -609,19 +609,19 @@
     },
     {
       "date": "2026-04-23",
-      "contributionCount": 8
+      "contributionCount": 4
     },
     {
       "date": "2026-04-24",
-      "contributionCount": 2
+      "contributionCount": 1
     },
     {
       "date": "2026-04-25",
-      "contributionCount": 5
+      "contributionCount": 3
     },
     {
       "date": "2026-04-26",
-      "contributionCount": 6
+      "contributionCount": 4
     },
     {
       "date": "2026-04-27",
@@ -637,7 +637,7 @@
     },
     {
       "date": "2026-04-30",
-      "contributionCount": 2
+      "contributionCount": 1
     },
     {
       "date": "2026-05-01",
@@ -657,7 +657,7 @@
     },
     {
       "date": "2026-05-05",
-      "contributionCount": 5
+      "contributionCount": 3
     },
     {
       "date": "2026-05-06",
@@ -665,19 +665,19 @@
     },
     {
       "date": "2026-05-07",
-      "contributionCount": 6
+      "contributionCount": 3
     },
     {
       "date": "2026-05-08",
-      "contributionCount": 6
+      "contributionCount": 3
     },
     {
       "date": "2026-05-09",
-      "contributionCount": 6
+      "contributionCount": 3
     },
     {
       "date": "2026-05-10",
-      "contributionCount": 2
+      "contributionCount": 1
     },
     {
       "date": "2026-05-11",
@@ -745,7 +745,7 @@
     },
     {
       "date": "2026-05-27",
-      "contributionCount": 2
+      "contributionCount": 1
     },
     {
       "date": "2026-05-28",
@@ -781,7 +781,7 @@
     },
     {
       "date": "2026-06-05",
-      "contributionCount": 6
+      "contributionCount": 4
     },
     {
       "date": "2026-06-06",
@@ -805,7 +805,7 @@
     },
     {
       "date": "2026-06-11",
-      "contributionCount": 5
+      "contributionCount": 3
     },
     {
       "date": "2026-06-12",
@@ -1473,6 +1473,10 @@
     },
     {
       "date": "2026-11-25",
+      "contributionCount": 0
+    },
+    {
+      "date": "2026-11-26",
       "contributionCount": 0
     }
   ],
